@@ -60,35 +60,41 @@ const Viewport = () => {
 
   return (
     <div className="viewport">
-      <div className="view_controls">
-        <div className="view_controls_buttons">
-          <div
-            className={`view_controls_button ${!canGoBack ? 'disabled' : ''}`}
-            onClick={handleBack}
-          >
-            <IoArrowBackCircle />
+      {
+        activeUrl ? <>
+          <div className="view_controls">
+            <div className="view_controls_buttons">
+              <div
+                className={`view_controls_button ${!canGoBack ? 'disabled' : ''}`}
+                onClick={handleBack}
+              >
+                <IoArrowBackCircle />
+              </div>
+              <div
+                className={`view_controls_button ${!canGoForward ? 'disabled' : ''}`}
+                onClick={handleForward}
+              >
+                <IoArrowForwardCircle />
+              </div>
+            </div>
+            <div className="view_controls_url">{currentUrl}</div>
+            <div className="view_controls_buttons">
+              <div className="view_controls_button" onClick={handleRefresh}>
+                <IoRefreshCircle />
+              </div>
+            </div>
           </div>
-          <div
-            className={`view_controls_button ${!canGoForward ? 'disabled' : ''}`}
-            onClick={handleForward}
-          >
-            <IoArrowForwardCircle />
+          <div className="webview-container" ref={webviewContainerRef}>
+            <webview
+              key={webviewKey}
+              src={activeUrl}
+              style={{ width: '100%', height: '100%' }}
+            ></webview>
           </div>
+        </> : <div className="viewport_placeholder">
+          <div className="viewport_placeholder_text">Select a Navigation Item to start</div>
         </div>
-        <div className="view_controls_url">{currentUrl}</div>
-        <div className="view_controls_buttons">
-          <div className="view_controls_button" onClick={handleRefresh}>
-            <IoRefreshCircle />
-          </div>
-        </div>
-      </div>
-      <div className="webview-container" ref={webviewContainerRef}>
-        <webview
-          key={webviewKey}
-          src={activeUrl}
-          style={{ width: '100%', height: '100%' }}
-        ></webview>
-      </div>
+      }
     </div>
   );
 };

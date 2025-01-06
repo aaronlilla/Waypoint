@@ -2227,7 +2227,7 @@ function $e() {
   }(Yr)), Yr;
 }
 var Zr = {}, br = {}, qa;
-function Ve() {
+function Ye() {
   return qa || (qa = 1, br.fromCallback = function(n) {
     return Object.defineProperty(function(...f) {
       if (typeof f[f.length - 1] == "function") n.apply(this, f);
@@ -2752,7 +2752,7 @@ GFS4: `), console.error(m);
 var Ga;
 function xt() {
   return Ga || (Ga = 1, function(n) {
-    const f = Ve().fromCallback, h = Ge(), d = [
+    const f = Ye().fromCallback, h = Ge(), d = [
       "access",
       "appendFile",
       "chmod",
@@ -2852,7 +2852,7 @@ var an, Ya;
 function rt() {
   if (Ya) return an;
   Ya = 1;
-  const n = Ve().fromPromise, { makeDir: f, makeDirSync: h } = /* @__PURE__ */ vc(), d = n(f);
+  const n = Ye().fromPromise, { makeDir: f, makeDirSync: h } = /* @__PURE__ */ vc(), d = n(f);
   return an = {
     mkdirs: d,
     mkdirsSync: h,
@@ -2867,7 +2867,7 @@ var on, za;
 function Rt() {
   if (za) return on;
   za = 1;
-  const n = Ve().fromPromise, f = /* @__PURE__ */ xt();
+  const n = Ye().fromPromise, f = /* @__PURE__ */ xt();
   function h(d) {
     return f.access(d).then(() => !0).catch(() => !1);
   }
@@ -3202,7 +3202,7 @@ var fn, Za;
 function Xi() {
   if (Za) return fn;
   Za = 1;
-  const n = Ve().fromCallback;
+  const n = Ye().fromCallback;
   return fn = {
     copy: n(/* @__PURE__ */ Ec()),
     copySync: /* @__PURE__ */ yc()
@@ -3359,7 +3359,7 @@ var hn, to;
 function kr() {
   if (to) return hn;
   to = 1;
-  const n = Ge(), f = Ve().fromCallback, h = /* @__PURE__ */ wc();
+  const n = Ge(), f = Ye().fromCallback, h = /* @__PURE__ */ wc();
   function d(s, a) {
     if (n.rm) return n.rm(s, { recursive: !0, force: !0 }, a);
     h(s, a);
@@ -3377,7 +3377,7 @@ var pn, ro;
 function _c() {
   if (ro) return pn;
   ro = 1;
-  const n = Ve().fromPromise, f = /* @__PURE__ */ xt(), h = be, d = /* @__PURE__ */ rt(), u = /* @__PURE__ */ kr(), s = n(async function(i) {
+  const n = Ye().fromPromise, f = /* @__PURE__ */ xt(), h = be, d = /* @__PURE__ */ rt(), u = /* @__PURE__ */ kr(), s = n(async function(i) {
     let t;
     try {
       t = await f.readdir(i);
@@ -3408,7 +3408,7 @@ var mn, no;
 function Sc() {
   if (no) return mn;
   no = 1;
-  const n = Ve().fromCallback, f = be, h = Ge(), d = /* @__PURE__ */ rt();
+  const n = Ye().fromCallback, f = be, h = Ge(), d = /* @__PURE__ */ rt();
   function u(a, c) {
     function i() {
       h.writeFile(a, "", (t) => {
@@ -3456,7 +3456,7 @@ var gn, io;
 function Ac() {
   if (io) return gn;
   io = 1;
-  const n = Ve().fromCallback, f = be, h = Ge(), d = /* @__PURE__ */ rt(), u = Rt().pathExists, { areIdentical: s } = /* @__PURE__ */ Lt();
+  const n = Ye().fromCallback, f = be, h = Ge(), d = /* @__PURE__ */ rt(), u = Rt().pathExists, { areIdentical: s } = /* @__PURE__ */ Lt();
   function a(i, t, l) {
     function o(r, p) {
       h.link(r, p, (g) => {
@@ -3581,7 +3581,7 @@ var yn, so;
 function Cc() {
   if (so) return yn;
   so = 1;
-  const n = Ve().fromCallback, f = be, h = /* @__PURE__ */ xt(), d = /* @__PURE__ */ rt(), u = d.mkdirs, s = d.mkdirsSync, a = /* @__PURE__ */ Tc(), c = a.symlinkPaths, i = a.symlinkPathsSync, t = /* @__PURE__ */ Rc(), l = t.symlinkType, o = t.symlinkTypeSync, r = Rt().pathExists, { areIdentical: p } = /* @__PURE__ */ Lt();
+  const n = Ye().fromCallback, f = be, h = /* @__PURE__ */ xt(), d = /* @__PURE__ */ rt(), u = d.mkdirs, s = d.mkdirsSync, a = /* @__PURE__ */ Tc(), c = a.symlinkPaths, i = a.symlinkPathsSync, t = /* @__PURE__ */ Rc(), l = t.symlinkType, o = t.symlinkTypeSync, r = Rt().pathExists, { areIdentical: p } = /* @__PURE__ */ Lt();
   function g(w, R, O, I) {
     I = typeof O == "function" ? O : I, O = typeof O == "function" ? !1 : O, h.lstat(R, (M, C) => {
       !M && C.isSymbolicLink() ? Promise.all([
@@ -3677,7 +3677,7 @@ function Oc() {
   } catch {
     n = dt;
   }
-  const f = Ve(), { stringify: h, stripBom: d } = Ki();
+  const f = Ye(), { stringify: h, stripBom: d } = Ki();
   async function u(o, r = {}) {
     typeof r == "string" && (r = { encoding: r });
     const p = r.fs || n, g = "throws" in r ? r.throws : !0;
@@ -3739,7 +3739,7 @@ var Tn, ho;
 function Ji() {
   if (ho) return Tn;
   ho = 1;
-  const n = Ve().fromCallback, f = Ge(), h = be, d = /* @__PURE__ */ rt(), u = Rt().pathExists;
+  const n = Ye().fromCallback, f = Ge(), h = be, d = /* @__PURE__ */ rt(), u = Rt().pathExists;
   function s(c, i, t, l) {
     typeof t == "function" && (l = t, t = "utf8");
     const o = h.dirname(c);
@@ -3789,7 +3789,7 @@ var bn, go;
 function Nc() {
   if (go) return bn;
   go = 1;
-  const n = Ve().fromPromise, f = /* @__PURE__ */ Ic();
+  const n = Ye().fromPromise, f = /* @__PURE__ */ Ic();
   return f.outputJson = n(/* @__PURE__ */ Pc()), f.outputJsonSync = /* @__PURE__ */ Dc(), f.outputJSON = f.outputJson, f.outputJSONSync = f.outputJsonSync, f.writeJSON = f.writeJson, f.writeJSONSync = f.writeJsonSync, f.readJSON = f.readJson, f.readJSONSync = f.readJsonSync, bn = f, bn;
 }
 var On, vo;
@@ -3872,7 +3872,7 @@ var Pn, yo;
 function Lc() {
   if (yo) return Pn;
   yo = 1;
-  const n = Ve().fromCallback;
+  const n = Ye().fromCallback;
   return Pn = {
     move: n(/* @__PURE__ */ Fc()),
     moveSync: /* @__PURE__ */ xc()
@@ -6587,9 +6587,9 @@ function ff() {
       if (qe && !We)
         return Se || (Se = new st()), Ne || Ea(b) ? da(b, x, z, se, Ie, Se) : xu(b, x, Ue, z, se, Ie, Se);
       if (!(z & u)) {
-        var Ye = We && ve.call(b, "__wrapped__"), ze = Je && ve.call(x, "__wrapped__");
-        if (Ye || ze) {
-          var ut = Ye ? b.value() : b, at = ze ? x.value() : x;
+        var ze = We && ve.call(b, "__wrapped__"), Xe = Je && ve.call(x, "__wrapped__");
+        if (ze || Xe) {
+          var ut = ze ? b.value() : b, at = Xe ? x.value() : x;
           return Se || (Se = new st()), Ie(ut, at, z, se, Se);
         }
       }
@@ -6621,9 +6621,9 @@ function ff() {
         return Pe == x;
       var We = -1, Je = !0, qe = z & s ? new mr() : void 0;
       for (Se.set(b, x), Se.set(x, b); ++We < Le; ) {
-        var Ye = b[We], ze = x[We];
+        var ze = b[We], Xe = x[We];
         if (se)
-          var ut = Ne ? se(ze, Ye, We, x, b, Se) : se(Ye, ze, We, b, x, Se);
+          var ut = Ne ? se(Xe, ze, We, x, b, Se) : se(ze, Xe, We, b, x, Se);
         if (ut !== void 0) {
           if (ut)
             continue;
@@ -6632,13 +6632,13 @@ function ff() {
         }
         if (qe) {
           if (!Ce(x, function(at, yt) {
-            if (!nt(qe, yt) && (Ye === at || Ie(Ye, at, z, se, Se)))
+            if (!nt(qe, yt) && (ze === at || Ie(ze, at, z, se, Se)))
               return qe.push(yt);
           })) {
             Je = !1;
             break;
           }
-        } else if (!(Ye === ze || Ie(Ye, ze, z, se, Se))) {
+        } else if (!(ze === Xe || Ie(ze, Xe, z, se, Se))) {
           Je = !1;
           break;
         }
@@ -6689,10 +6689,10 @@ function ff() {
         if (!(Ne ? qe in x : ve.call(x, qe)))
           return !1;
       }
-      var Ye = Se.get(b);
-      if (Ye && Se.get(x))
-        return Ye == x;
-      var ze = !0;
+      var ze = Se.get(b);
+      if (ze && Se.get(x))
+        return ze == x;
+      var Xe = !0;
       Se.set(b, x), Se.set(x, b);
       for (var ut = Ne; ++Je < Ue; ) {
         qe = Le[Je];
@@ -6700,16 +6700,16 @@ function ff() {
         if (se)
           var ya = Ne ? se(yt, at, qe, x, b, Se) : se(at, yt, qe, b, x, Se);
         if (!(ya === void 0 ? at === yt || Ie(at, yt, z, se, Se) : ya)) {
-          ze = !1;
+          Xe = !1;
           break;
         }
         ut || (ut = qe == "constructor");
       }
-      if (ze && !ut) {
+      if (Xe && !ut) {
         var yr = b.constructor, wr = x.constructor;
-        yr != wr && "constructor" in b && "constructor" in x && !(typeof yr == "function" && yr instanceof yr && typeof wr == "function" && wr instanceof wr) && (ze = !1);
+        yr != wr && "constructor" in b && "constructor" in x && !(typeof yr == "function" && yr instanceof yr && typeof wr == "function" && wr instanceof wr) && (Xe = !1);
       }
-      return Se.delete(b), Se.delete(x), ze;
+      return Se.delete(b), Se.delete(x), Xe;
     }
     function ha(b) {
       return Iu(b, Vu, $u);
@@ -9073,9 +9073,9 @@ function $t() {
 }
 var la = $t();
 const Rf = Xu(import.meta.url), Vi = be.dirname(Rf);
-let Xe;
+let Ve;
 const yl = () => {
-  Xe = new wl({
+  Ve = new wl({
     width: 1920,
     height: 1080,
     icon: be.join(Vi, "../src/assets/icons/waypoint_logo.ico"),
@@ -9091,7 +9091,10 @@ const yl = () => {
     backgroundColor: "#1f1f28"
   });
   const f = process.env.VITE_DEV_SERVER_URL !== void 0 ? process.env.VITE_DEV_SERVER_URL : `file://${be.join(Vi, "../dist-electron/index.html")}`;
-  Xe.loadURL(f);
+  Ve.loadURL(f), Ve.webContents.openDevTools({
+    mode: "detach"
+    // Opens DevTools in a separate window
+  });
 };
 lr.whenReady().then(() => {
   yl(), lr.on("activate", () => {
@@ -9099,22 +9102,22 @@ lr.whenReady().then(() => {
   });
 });
 xr.on("minimize-window", () => {
-  Xe && Xe.minimize();
+  Ve && Ve.minimize();
 });
 xr.on("maximize-window", () => {
-  Xe && (Xe.isMaximized() ? Xe.unmaximize() : Xe.maximize());
+  Ve && (Ve.isMaximized() ? Ve.unmaximize() : Ve.maximize());
 });
 xr.on("close-window", () => {
-  Xe && Xe.close();
+  Ve && Ve.close();
 });
 lr.on("window-all-closed", () => {
   process.platform !== "darwin" && lr.quit();
 });
 la.autoUpdater.on("update-available", () => {
-  Xe.webContents.send("update_available");
+  Ve.webContents.send("update_available");
 });
 la.autoUpdater.on("update-downloaded", () => {
-  Xe.webContents.send("update_downloaded");
+  Ve.webContents.send("update_downloaded");
 });
 la.autoUpdater.checkForUpdatesAndNotify();
 xr.on("app_version", (n) => {

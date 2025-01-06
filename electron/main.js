@@ -33,10 +33,10 @@ const createWindow = () => {
 
   mainWindow.loadURL(startUrl);
 
-  // // Open DevTools for both development and production if desired
-  // mainWindow.webContents.openDevTools({
-  //   mode: 'detach', // Opens DevTools in a separate window
-  // });
+  // Open DevTools for both development and production if desired
+  mainWindow.webContents.openDevTools({
+    mode: 'detach', // Opens DevTools in a separate window
+  });
 };
 
 // Handle app lifecycle
