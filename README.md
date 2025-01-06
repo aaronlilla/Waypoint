@@ -1,4 +1,5 @@
 # **Waypoint**
+![image](https://github.com/user-attachments/assets/d7aaf054-7a3e-417f-80a4-46acbfd18796)
 
 A sleek and feature-rich navigation tool for Path of Exile 2 resources. This project allows users to navigate various build guides, tools, and official resources with an intuitive interface, integrated search functionality, and expandable navigation categories.
 
