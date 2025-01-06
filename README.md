@@ -1,8 +1,21 @@
-# React + Vite
+# **Waypoint**
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A sleek and feature-rich navigation tool for Path of Exile 2 resources. This project allows users to navigate various build guides, tools, and official resources with an intuitive interface, integrated search functionality, and expandable navigation categories.
 
-Currently, two official plugins are available:
+## **Features**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Dynamic Navigation**: Organized categories with expandable and collapsible sections.
+- **Filtering**: Search bar to filter parent and sub-items dynamically.
+  - Automatically expands categories with matching items.
+  - Shows all sub-items when a parent matches.
+- **Integrated WebView**: Embedded WebView component to load and display selected URLs.
+  - Browser-like controls for back, forward, and refresh.
+  - Dynamically updates URL and navigation state.
+- **Responsive Design**: Fully styled with custom scrollbars and hover effects.
+
+## **Technologies Used**
+
+- **Frontend**: React with Redux for state management.
+- **Styling**: SASS for custom styling, including hover effects and animations.
+- **Navigation**: React-icons for intuitive UI.
+- **WebView**: Electron's WebView API for in-app browsing.
