@@ -1,15 +1,21 @@
-import { contextBridge as s, ipcRenderer as i } from "electron";
-s.exposeInMainWorld("electronAPI", {
+import { contextBridge, ipcRenderer } from "electron";
+contextBridge.exposeInMainWorld("electronAPI", {
   windowControls: {
-    minimize: () => i.send("minimize-window"),
-    maximize: () => i.send("maximize-window"),
-    close: () => i.send("close-window")
+    minimize: () => ipcRenderer.send("minimize-window"),
+    maximize: () => ipcRenderer.send("maximize-window"),
+    close: () => ipcRenderer.send("close-window")
   },
-  send: (e, n) => {
-    ["app_version"].includes(e) && i.send(e, n);
+  send: (channel, data) => {
+    const validChannels = ["app_version"];
+    if (validChannels.includes(channel)) {
+      ipcRenderer.send(channel, data);
+    }
   },
-  receive: (e, n) => {
-    ["app_version", "update_available", "update_downloaded"].includes(e) && i.on(e, (l, ...o) => n(...o));
+  receive: (channel, callback) => {
+    const validChannels = ["app_version", "update_available", "update_downloaded"];
+    if (validChannels.includes(channel)) {
+      ipcRenderer.on(channel, (event, ...args) => callback(...args));
+    }
   }
 });
 console.log("Preload script loaded");

@@ -15,9 +15,20 @@ const navigationSlice = createSlice({
       state.filteredNavItems[action.payload].expanded = state.navItems[action.payload].expanded;
     },
     selectNavItem: (state, action) => {
-      state.navItems.forEach(item => item.items.forEach(subitem => (subitem.selected = false)));
-      state.navItems[action.payload[0]].items[action.payload[1]].selected = true;
-      state.activeUrl = state.navItems[action.payload[0]].items[action.payload[1]].url;
+      const updatedNavItems = state.navItems.map((item, parentIndex) => ({
+        ...item,
+        items: item.items.map((subItem, subIndex) => ({
+          ...subItem,
+          selected:
+            parentIndex === action.payload[0] && subIndex === action.payload[1],
+        })),
+      }));
+    
+      state.navItems = updatedNavItems;
+    
+      state.filteredNavItems = updatedNavItems;
+      state.activeUrl =
+        state.navItems[action.payload[0]].items[action.payload[1]].url;
     },
     setSearchTerm: (state, action) => {
       state.searchTerm = action.payload;
