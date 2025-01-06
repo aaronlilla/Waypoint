@@ -13,6 +13,7 @@ const createWindow = () => {
   mainWindow = new BrowserWindow({
     width: 1920,
     height: 1080,
+    icon: path.join(__dirname, '../src/assets/icons/waypoint_logo.ico'),
     webPreferences: {
       preload: path.join(__dirname, 'preload.mjs'),
       contextIsolation: true,
@@ -22,18 +23,20 @@ const createWindow = () => {
       webSecurity: false,
     },
     frame: false,
+    backgroundColor: '#1f1f28'
   });
 
   const isDev = process.env.VITE_DEV_SERVER_URL !== undefined;
   const startUrl = isDev
     ? process.env.VITE_DEV_SERVER_URL
-    : `file://${path.join(__dirname, '../dist/index.html')}`;
+    : `file://${path.join(__dirname, '../dist-electron/index.html')}`;
 
   mainWindow.loadURL(startUrl);
 
-  if (isDev) {
-    mainWindow.webContents.openDevTools();
-  }
+  // // Open DevTools for both development and production if desired
+  // mainWindow.webContents.openDevTools({
+  //   mode: 'detach', // Opens DevTools in a separate window
+  // });
 };
 
 // Handle app lifecycle
