@@ -1,0 +1,122 @@
+.navigation {
+    width: calc(341px - 48px);
+    background: #1f1f28;
+    border-right: 1px solid #262630;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.4);
+    background-image: url('../../assets/waypoint_nav.png');
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 24px 16px 24px 24px;;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    max-height: calc(100vh - 105px);
+  
+    /* Custom Scrollbar Styling */
+    &::-webkit-scrollbar {
+      width: 8px; /* Thin scrollbar */
+    }
+  
+    &::-webkit-scrollbar-track {
+      background: transparent; /* Transparent track */
+    }
+  
+    &::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.2); /* Subtle light color */
+      border-radius: 8px; /* Rounded edges */
+      opacity: 0.6; /* Default opacity */
+      transition: background 0.3s ease, opacity 0.3s ease; /* Smooth transition */
+    }
+
+    .nav-item {
+        width: calc(100% - 24px);
+        display: flex;
+        flex-direction: column;
+        padding: 12px;
+        cursor: pointer;
+        border-radius: 8px;
+        border: 1px solid transparent;
+        transition: all 0.2s ease-in-out;
+    
+        &:hover {
+            background: #262731;
+            border: 1px solid rgb(55, 55, 70);
+        }
+    
+        .nav-item-main {
+            width: 100%;
+            height: 40px;
+            line-height: 50px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            font-size: 24px;
+            svg {
+                margin-right: 16px;
+            }
+        }
+
+        .nav-item-sub {
+            width: calc(100% - 32px);
+            height: 50px;
+            line-height: 50px;
+            font-size: 16px;
+            transition: all 0.2s ease-in-out;
+            margin-left: 16px;
+            padding-left: 16px;
+            display: flex;
+            align-items: center;
+            border-left: 2px solid rgb(150, 150, 151);
+            font-family: 'Roboto', sans-serif;
+
+            div {
+                display: flex;
+                align-items: center;
+            }
+
+            img {
+                width: 24px;
+                margin-right: 8px;
+            }
+
+            &:hover {
+                background: linear-gradient(to right, rgba(255, 255, 255, 0.1), transparent);
+            }
+        }
+
+        .nav-item-sub-selected {
+            background: linear-gradient(to right, rgba(255, 255, 255, 0.1), transparent);
+        }
+    }
+    
+    .nav-item-expanded {
+        background: #262731;
+        border: 1px solid rgb(55, 55, 70);
+    }
+
+    .rc-input-affix-wrapper {
+        width: calc(100% - 16px);
+        display: flex;
+        border-radius: 8px;
+        border: 1px solid #424250;
+        padding: 8px;
+
+        .rc-input-prefix {
+            display: flex;
+            align-items: center;
+        }
+
+        .rc-input {
+            background: none;
+            border: none;
+            outline: none;
+            font-size: 16px;
+            font-family: 'Roboto', sans-serif;
+            padding-left: 8px;
+        }
+    }
+}
